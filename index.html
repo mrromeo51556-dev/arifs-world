@@ -1,0 +1,254 @@
+# arifs-world
+Arif’s World — Premium Caption Hub
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#030817">
+<title>ARIF'S WORLD</title>
+<style>
+:root{--bg:#030817;--panel:#0a1b36;--line:#1b4e88;--blue:#168bff;--cyan:#24e5ff;--purple:#a14cff;--pink:#ff4fba;--text:#f4f8ff;--muted:#9db4d6}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(ellipse at 50% -10%,#142c66,#07132b 38%,var(--bg) 75%);color:var(--text);font-family:system-ui,-apple-system,"Noto Sans Bengali",sans-serif}
+.app{width:min(100%,520px);margin:auto;min-height:100vh;padding:17px 16px 100px;overflow:hidden}
+.top{display:flex;justify-content:space-between;align-items:center;color:#a9cfff;font-size:11px;letter-spacing:2px;font-weight:700}
+.round{width:40px;height:40px;border-radius:50%;border:1px solid #225d9f;background:linear-gradient(145deg,#102a53,#061127);color:white;font-size:21px;margin-left:7px}
+.hero{display:flex;align-items:center;gap:15px;padding:22px 12px;margin:0 -15px 18px;min-height:205px;position:relative;overflow:hidden;background:radial-gradient(ellipse at 50% 18%,#174b8b88,transparent 48%),radial-gradient(ellipse at 12% 5%,#6b2ab844,transparent 38%),linear-gradient(180deg,#07162f 0%,#071225 72%,#030817 100%)}
+.hero:before{content:'';position:absolute;inset:0;background:radial-gradient(1px 1px at 12% 23%,#fff 90%,transparent),radial-gradient(1px 1px at 82% 19%,#9feaff 90%,transparent),radial-gradient(1px 1px at 71% 47%,#fff 90%,transparent),radial-gradient(1px 1px at 25% 61%,#c7eaff 90%,transparent);pointer-events:none}
+.hero:after{content:'';position:absolute;bottom:-35px;left:-8%;right:-8%;height:95px;background:radial-gradient(ellipse at 25% 100%,#173b68 0 22%,transparent 58%),radial-gradient(ellipse at 65% 110%,#182b59 0 25%,transparent 60%),radial-gradient(ellipse at 92% 100%,#26305b 0 20%,transparent 55%);filter:blur(6px);pointer-events:none}
+.hero>*{position:relative;z-index:1}
+.avatar{width:102px;height:102px;border-radius:50%;border:4px solid transparent;background:linear-gradient(#071329,#071329) padding-box,conic-gradient(var(--cyan),var(--blue),var(--purple),var(--cyan)) border-box;box-shadow:0 0 22px #078cff70;display:grid;place-items:center;font-size:35px;font-weight:900;flex-shrink:0}
+.welcome{font-size:13px;color:#b6c9e8}
+.hero h1{font-size:clamp(24px,7vw,34px);line-height:1.05;margin:5px 0;background:linear-gradient(100deg,#fff,#a9dfff 50%,#bda1ff);-webkit-background-clip:text;color:transparent;font-style:italic}
+.line{height:4px;width:115px;border-radius:8px;background:linear-gradient(90deg,var(--purple),var(--blue),transparent)}
+.tag{font-size:12px;color:#8bb7ef;margin-top:8px}
+.socials{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:3px 0 22px}
+.social{text-decoration:none;color:white;text-align:center;min-width:0;font-size:11px;font-weight:700}
+.orb{height:62px;border-radius:17px;display:grid;place-items:center;font-size:29px;margin-bottom:7px;border:1px solid #3279c8;box-shadow:inset 0 3px 7px #ffffff2c,0 8px 18px #0008}
+.fb{background:linear-gradient(145deg,#29aaff,#0751cb)}
+.tt{background:linear-gradient(145deg,#26314a,#050913);border-color:#bc62ff}
+.yt{background:linear-gradient(145deg,#ff5d72,#d90035);border-color:#ff728b}
+.wa{background:linear-gradient(145deg,#31ffc0,#008c68);border-color:#2affd0}
+.sub{font-size:9px;color:#8daedb;font-weight:400;margin-top:3px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.search{display:flex;align-items:center;gap:10px;padding:0 15px;height:51px;border:1px solid #2c6cae;border-radius:28px;background:linear-gradient(120deg,#0b1d3a,#071127);margin-bottom:25px}
+.search b{font-size:22px;color:#a8d9ff}
+.search input{min-width:0;flex:1;background:none;border:0;outline:0;color:white;font:14px system-ui}
+.search input::placeholder{color:#819dc5}
+.head{display:flex;align-items:center;justify-content:space-between;margin:0 2px 12px}
+.title{font-size:17px;font-weight:800}
+.see{border:1px solid #1c4c83;background:#091a35;border-radius:20px;padding:7px 12px;color:#c2d9ff;font-size:11px}
+.cats{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;margin-bottom:25px}
+.cat{min-width:0;min-height:91px;border:1px solid #234c83;border-radius:16px;background:linear-gradient(145deg,#10254a,#07132a);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:6px 2px;color:white;box-shadow:inset 0 1px 4px #d1e9ff12}
+.cat.active{border-color:var(--cyan);box-shadow:0 0 15px #0baeff44}
+.cat i{font-size:24px;font-style:normal;filter:drop-shadow(0 0 7px currentColor)}
+.cat span{font-size:10px;font-weight:700;overflow-wrap:anywhere}
+.feature{position:relative;overflow:hidden;border:1px solid #1467d5;border-radius:21px;min-height:168px;margin-bottom:25px;background:radial-gradient(ellipse at 85% 15%,#8b4caa88,transparent 38%),linear-gradient(135deg,#07142b,#10254a 55%,#191d46);box-shadow:0 0 24px #007bff19}
+.feature:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#041127d9,#07162b66)}
+.feature-content{position:relative;z-index:1;padding:21px 17px;max-width:85%}
+.tiny{font-size:10px;letter-spacing:1px;color:#75cfff;margin-bottom:10px}
+.feature-text{font-size:19px;line-height:1.55;font-weight:700}
+.feature-bottom{margin-top:13px;font-size:11px;color:#a9cfff}
+.actions{position:absolute;right:10px;bottom:11px;z-index:2;display:flex;gap:5px}
+.copy,.fav{border:1px solid #3878c2;background:#081a35e8;border-radius:20px;padding:8px 10px;color:white;font-size:11px}
+.fav{font-size:17px;color:#d1e3ff}
+.fav.saved,.heart.saved{color:#ff5cae}
+.list{display:grid;gap:9px;margin-bottom:24px}
+.card{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center;padding:12px;border-radius:15px;border:1px solid #183e70;background:linear-gradient(130deg,#0b1e3b,#071228)}
+.kind{font-size:10px;color:#72c8ff;margin-bottom:5px}
+.words{font-size:13px;line-height:1.55}
+.buttons{display:flex;align-items:center;gap:4px}
+.heart{border:0;background:none;color:#7199c7;font-size:20px;padding:2px}
+.ai{display:flex;align-items:center;gap:13px;border:1px solid #205a9b;border-radius:20px;padding:14px;background:linear-gradient(145deg,#0d2346,#061127);margin-bottom:22px}
+.bot{width:58px;height:58px;border-radius:17px;display:grid;place-items:center;font-size:34px;background:radial-gradient(circle at 35% 20%,#a9f8ff,#268bff 48%,#3727a2);box-shadow:0 0 20px #258dff55;flex-shrink:0}
+.ai strong{font-size:15px}
+.online{font-size:10px;color:#00e7a0}
+.ai p{font-size:11px;color:#9bb6da;margin:5px 0 0}
+.go{margin-left:auto;width:38px;height:38px;border-radius:50%;border:1px solid #5d4eff;background:linear-gradient(135deg,#b14bff,#087eff);color:white;font-size:21px}
+.empty{text-align:center;color:#9db4d6;padding:20px;font-size:13px}
+.nav{position:fixed;z-index:10;bottom:0;left:50%;transform:translateX(-50%);width:min(100%,520px);padding:10px 12px calc(10px + env(safe-area-inset-bottom));display:grid;grid-template-columns:repeat(4,1fr);background:#040c1cf5;backdrop-filter:blur(18px);border-top:1px solid #1a3d68}
+.nav button{border:0;background:none;color:#8da7ce;display:flex;flex-direction:column;align-items:center;gap:3px;font-size:10px}
+.nav button span:first-child{font-size:22px}
+.nav button.active{color:#80aaff;text-shadow:0 0 13px #427bff}
+.toast{position:fixed;z-index:30;bottom:85px;left:50%;transform:translate(-50%,12px);background:#0d2a4e;border:1px solid #2f8fff;border-radius:22px;padding:10px 16px;font-size:12px;opacity:0;transition:.2s;pointer-events:none}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+footer{text-align:center;color:#627fa8;font-size:10px;padding:10px}
+@media(max-width:350px){.app{padding-left:11px;padding-right:11px}.avatar{width:85px;height:85px}.hero h1{font-size:22px}.cats{gap:5px}.cat{min-height:80px}.cat span{font-size:9px}.orb{height:54px}.socials{gap:6px}}
+</style>
+</head>
+<body>
+<main class="app" id="home">
+<div class="top">
+<span>✦ YOUR CAPTION SPACE</span>
+<span>
+<button class="round" onclick="document.querySelector('#search').focus()">⌕</button>
+<button class="round" onclick="toast('Settings coming soon')">⚙</button>
+</span>
+</div>
+
+<header class="hero">
+<div class="avatar" style="overflow:hidden;padding:0">
+<img src="profile.png" alt="ARIF profile photo" style="width:100%;height:100%;object-fit:cover;border-radius:50%" onerror="this.remove();this.parentElement.textContent='A'">
+</div>
+<div>
+<div class="welcome">Hey, welcome to</div>
+<h1>Arif’s World</h1>
+<div class="line"></div>
+<div class="tag">DREAM • CREATE • INSPIRE</div>
+</div>
+</header>
+
+<section class="socials">
+<a class="social" href="https://www.facebook.com/share/14uCbKPH7PZ/" target="_blank" rel="noopener"><div class="orb fb">f</div>Facebook<div class="sub">Follow me</div></a>
+<a class="social" href="https://www.tiktok.com/@bad_boy_arif0" target="_blank" rel="noopener"><div class="orb tt">♪</div>TikTok<div class="sub">@bad_boy_arif0</div></a>
+<a class="social" href="https://youtube.com/@soul_tale_official?si=8MKIc5XDF96NfNYK" target="_blank" rel="noopener"><div class="orb yt">▶</div>YouTube<div class="sub">Soul Tale</div></a>
+<a class="social" href="https://wa.me/8801311198718" target="_blank" rel="noopener"><div class="orb wa">◉</div>WhatsApp<div class="sub">Chat with me</div></a>
+</section>
+
+<label class="search">
+<b>⌕</b>
+<input id="search" type="search" placeholder="Search captions..." autocomplete="off">
+<b>☷</b>
+</label>
+
+<section id="categorySection">
+<div class="head">
+<div class="title">▦ Categories</div>
+<button class="see" onclick="setCat('All')">See All ↗</button>
+</div>
+<div class="cats" id="cats"></div>
+</section>
+
+<section>
+<div class="head">
+<div class="title">✦ Featured Caption</div>
+<button class="see" onclick="nextFeature()">Next ↗</button>
+</div>
+<div class="feature">
+<div class="feature-content">
+<div class="tiny">✦ CAPTION OF THE MOMENT</div>
+<div class="feature-text" id="featured">স্বপ্ন দেখা ছেড়ো না… একদিন সবকিছু ঠিক হবে।</div>
+<div class="feature-bottom" id="featureCat">✦ Motivation</div>
+</div>
+<div class="actions">
+<button class="copy" onclick="copyFeatured()">▢ Copy</button>
+<button class="fav" id="featureFav" onclick="toggleFeature()">♡</button>
+</div>
+</div>
+</section>
+
+<section id="allCaptions">
+<div class="head">
+<div class="title">✧ Captions</div>
+<span class="see" id="count">120 total</span>
+</div>
+<div class="list" id="list"></div>
+</section>
+
+<section id="assistant" class="ai">
+<div class="bot">🤖</div>
+<div>
+<strong>AI Assistant</strong> <span class="online">● Online</span>
+<p>ক্যাপশন খুঁজো, আইডিয়া নাও।</p>
+</div>
+<button class="go" onclick="toast('AI Assistant demo — পরে API যুক্ত করা যাবে')">›</button>
+</section>
+<footer>Made with ✦ for ARIF</footer>
+</main>
+
+<nav class="nav">
+<button class="active" onclick="navTo('home',this)"><span>⌂</span>Home</button>
+<button onclick="navTo('categorySection',this)"><span>▦</span>Categories</button>
+<button onclick="navTo('allCaptions',this)"><span>♡</span>Captions</button>
+<button onclick="navTo('assistant',this)"><span>▣</span>Assistant</button>
+</nav>
+<div class="toast" id="toast">কপি হয়েছে ✓</div>
+
+<script>
+const data={
+Attitude:["আমার নীরবতাকে দুর্বলতা ভেবো না, সময় হলে উত্তরটা কাজেই দেব।","আমি বদলাইনি, শুধু মানুষ চিনতে শিখেছি।","নিজের রাজ্যে আমি নিজেই রাজা।","সবাইকে খুশি করা নয়, নিজেকে ঠিক রাখা জরুরি।","আমার গল্পে নায়কও আমি, নিয়মও আমার।","সম্মান দিলে সম্মান পাবে, অবহেলা দিলে দূরত্ব।","চুপ থাকি বলে হেরে গেছি, এমনটা নয়।","নিজের দাম নিজেই জানি, প্রমাণের দরকার নেই।","ভিড়ের সঙ্গে নয়, নিজের পথে চলি।","আমার attitude নয়, তোমার ধারণাটাই সমস্যা।"],
+Sad:["হাসির আড়ালেও কিছু গল্প নীরবে কাঁদে।","সব কথা বলা যায় না, কিছু অনুভূতি শুধু থেকে যায়।","যাকে সবচেয়ে বেশি চাই, সে-ই সবচেয়ে দূরে।","কখনও কখনও চুপ থাকাটাই সবচেয়ে বড় উত্তর।","মন খারাপেরও কোনো নির্দিষ্ট কারণ থাকে না।","অপেক্ষা করতে করতে একসময় আশা ক্লান্ত হয়।","কিছু স্মৃতি মুছে যায় না, শুধু ব্যথা কমে।","ভালো থাকার অভিনয়টাও একদিন ক্লান্ত করে।","যে বুঝতে চায় না, তাকে বোঝানো বৃথা।","রাত জানে, দিনের হাসিটা কতটা ধার করা।"],
+Love:["তোমার সঙ্গে সাধারণ মুহূর্তগুলোও অসাধারণ হয়ে যায়।","তুমি পাশে থাকলে পথটাও সুন্দর লাগে।","ভালোবাসা মানে প্রতিদিন নতুন করে বেছে নেওয়া।","তোমার হাসিতে আমার ছোট্ট পৃথিবীটা আলো পায়।","হাজার মানুষের ভিড়ে মন তোমাকেই খোঁজে।","তোমার নামটা এলেই মন অকারণে ভালো হয়ে যায়।","একটু যত্নেই ভালোবাসা গভীর হয়।","তুমি থাকলে নীরবতাও কথা বলে।","হাতটা নয়, তোমার বিশ্বাসটা ধরে রাখতে চাই।","আমার প্রিয় গল্পের সুন্দর অংশ তুমি।"],
+Friendship:["বন্ধু মানে খারাপ দিনেও পাশে থাকার নাম।","একসঙ্গে হাসার স্মৃতিই বন্ধুত্বের সম্পদ।","বন্ধু কম হোক, কিন্তু মন থেকে হোক।","যে ভুল ধরিয়ে দেয়, সেই সত্যিকারের বন্ধু।","দূরত্ব বাড়ে, বন্ধুত্ব নয়।","বন্ধুত্বে হিসাব নয়, বিশ্বাস চলে।","পাগলামির সঙ্গীই তো আসল বন্ধু।","কথা কম হলেও বন্ধনটা গভীর।","বন্ধু মানে নিজের মতো করে থাকা যায় যার কাছে।","ভালো সময়ে সবাই, কঠিন সময়ে বন্ধু চেনা যায়।"],
+Funny:["ডায়েট কাল থেকে, আজকে খাবারের সঙ্গে শেষ দেখা!","আমার ঘুমের সঙ্গে অ্যালার্মের ব্যক্তিগত শত্রুতা আছে।","পড়তে বসলে হঠাৎ ঘর পরিষ্কার করতে ইচ্ছে করে।","মুড ভালো, পকেটটা শুধু সহযোগিতা করছে না।","আমি অলস না, এনার্জি সেভিং মোডে আছি।","ফোনের চার্জ আর আমার ধৈর্য—দুটোই দ্রুত শেষ হয়।","সিঙ্গেল লাইফে অন্তত চার্জার নিয়ে ঝগড়া নেই।","বুদ্ধি আছে, কিন্তু মাঝে মাঝে ছুটিতে যায়।","সকাল সকাল উঠি—স্বপ্নের মধ্যে।","জীবন ছোট, তাই আগে নাস্তা।"],
+Emotional:["কিছু মানুষ স্মৃতি হয়ে থেকেও খুব আপন থাকে।","একটু বোঝাপড়া অনেক অভিমান বাঁচিয়ে দেয়।","সব শক্ত মানুষেরও কখনও আশ্রয় দরকার হয়।","মনের কথা শুনতে পারাটাও এক ধরনের ভালোবাসা।","যত্ন ছোট হতে পারে, অনুভূতি নয়।","কিছু বিদায় শব্দ ছাড়াই ঘটে যায়।","যে পাশে থাকে, তার মূল্য সময় থাকতে দাও।","সব ক্ষত দেখা যায় না, তবু সেরে ওঠা সম্ভব।","আজকের কঠিন দিনটাই কালকের শক্তি হতে পারে।","নিজেকে সময় দাও, সবকিছু একদিনে ঠিক হয় না।"],
+Birthday:["শুভ জন্মদিন! তোমার নতুন বছরটা আনন্দে ভরে উঠুক।","তোমার প্রতিটি স্বপ্ন এক ধাপ করে পূরণ হোক।","আজকের দিনটা হোক হাসি আর ভালোবাসায় ভরা।","নতুন বয়স, নতুন আশা, নতুন সুন্দর শুরু।","তোমার জীবনে শান্তি আর সাফল্য দুটোই আসুক।","জন্মদিনে রইল অনেক শুভকামনা আর ভালোবাসা।","আজ তোমার দিন—মন খুলে হাসো।","প্রতিটি সকাল তোমার জন্য নতুন সম্ভাবনা নিয়ে আসুক।","তোমার সুন্দর মনটা সবসময় এমনই থাকুক।","আরও একটি বছর, আরও অনেক সুন্দর স্মৃতি।"],
+Islamic:["আল্লাহর ওপর ভরসা রাখো, উত্তম সময় আসবেই।","আলহামদুলিল্লাহ—প্রতিটি নিয়ামতের জন্য কৃতজ্ঞ।","দোয়া কখনো বৃথা যায় না, সময়টা আল্লাহই জানেন।","সবরের পরেই স্বস্তি আসে, ইনশাআল্লাহ।","নামাজে শান্তি, দোয়ায় আশা।","যা হারিয়েছ, তার চেয়েও উত্তম কিছু আল্লাহ দিতে পারেন।","আল্লাহর রহমত থেকে কখনো নিরাশ হয়ো না।","হৃদয় পরিষ্কার রাখো, নিয়ত সুন্দর রাখো।","তাওয়াক্কুল—চেষ্টা আমার, ভরসা আল্লাহর ওপর।","ইনশাআল্লাহ, প্রতিটি কঠিনতার সঙ্গে সহজতাও আছে।"],
+Bio:["স্বপ্ন বড়, কথা কম, চেষ্টা প্রতিদিন।","নিজের গল্প নিজেই লিখছি।","Simple life, peaceful mind.","শিখছি, বাড়ছি, এগিয়ে যাচ্ছি।","নিজের মতো, নিজের পথে।","Less noise, more progress.","ভালো মানুষ হওয়াটাই আসল পরিচয়।","Dream it. Work for it.","শান্ত মন, উঁচু লক্ষ্য।","একদিন নয়, প্রতিদিন একটু একটু করে।"],
+Banglish:["Nijer moto thaki, karor copy noi.","Shopno boro, kotha kom.","Mon bhalo rakho, baki shob thik hobe.","Chup thaka mane here jawa na.","Real thako, fake hoyo na.","Jibon ekta, nijer moto bacho.","Bhalobasha hok shotti, dekhano na.","Somoy shob kichur uttor dey.","Alhamdulillah for everything.","Smile koro, tension komao."],
+Motivation:["আজকের ছোট চেষ্টা কালকের বড় সাফল্য হতে পারে।","ধীরে এগোলেও থেমে যেও না।","নিজের গতিতে এগিয়ে যাও, তুলনা নয়।","ভুল মানে শেষ নয়, নতুন শিক্ষা।","স্বপ্ন দেখো, পরিকল্পনা করো, শুরু করো।","তোমার ভবিষ্যৎ আজকের অভ্যাসে গড়ে ওঠে।","এক ধাপ করে এগোলেও গন্তব্য কাছে আসে।","কঠিন সময়ও নতুন কিছু শেখায়।","শুরু করার জন্য perfect সময়ের অপেক্ষা কোরো না।","নিজের সম্ভাবনাকে সময় দাও।"],
+Nature:["আকাশের দিকে তাকালেই মনটা একটু হালকা হয়।","বৃষ্টির শব্দে কত কথা লুকিয়ে থাকে।","সূর্যাস্ত মনে করায়, শেষও সুন্দর হতে পারে।","প্রকৃতির নীরবতায় আলাদা এক শান্তি আছে।","মেঘের পরেই আকাশ আবার পরিষ্কার হয়।","চাঁদের আলোয় রাতটা অন্যরকম লাগে।","একটু সবুজ, একটু বাতাস—এটাই শান্তি।","প্রতিটি ঋতুর নিজস্ব গল্প আছে।","আকাশ বড়, তাই স্বপ্নও বড় হোক।","তারাভরা রাত, শান্ত মন."]};
+
+const icons={Attitude:"♛",Sad:"💔",Love:"♥",Friendship:"♟",Funny:"☻",Emotional:"✿",Birthday:"♕",Islamic:"☾",Bio:"♙",Banglish:"✧",Motivation:"✦",Nature:"☁"};
+const colors={Attitude:"#b56cff",Sad:"#7e79ff",Love:"#ff4d9a",Friendship:"#21d8ff",Funny:"#ffbd55",Emotional:"#d783ff",Birthday:"#ff69d2",Islamic:"#32edc0",Bio:"#38b8ff",Banglish:"#b98cff",Motivation:"#61cfff",Nature:"#4ce1c0"};
+const all=Object.entries(data).flatMap(([cat,arr])=>arr.map((text,i)=>({id:cat+i,cat,text})));
+let selected="All",favs=new Set(),fi=0;
+const $=id=>document.getElementById(id);
+
+function esc(s){return s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
+
+function drawCats(){
+$("cats").innerHTML=Object.keys(data).map(c=>`<button class="cat ${selected===c?'active':''}" onclick="setCat('${c}')"><i style="color:${colors[c]}">${icons[c]}</i><span>${c}</span></button>`).join("")
+}
+
+function drawList(){
+let q=$("search").value.trim().toLowerCase();
+let arr=all.filter(c=>(selected==="All"||selected==="Favorites"&&favs.has(c.id)||c.cat===selected)&&(!q||(c.cat+" "+c.text).toLowerCase().includes(q)));
+$("count").textContent=selected==="Favorites"?arr.length+" saved":arr.length+" shown";
+$("list").innerHTML=arr.length?arr.map(c=>`<article class="card"><div><div class="kind">${icons[c.cat]} ${c.cat}</div><div class="words">${esc(c.text)}</div></div><div class="buttons"><button class="copy" onclick="copyId('${c.id}')">▢ Copy</button><button class="heart ${favs.has(c.id)?'saved':''}" onclick="toggleFav('${c.id}')">${favs.has(c.id)?"♥":"♡"}</button></div></article>`).join(""):'<div class="empty">কোনো ক্যাপশন পাওয়া যায়নি।</div>'
+}
+
+function setCat(c){selected=c;drawCats();drawList();$("allCaptions").scrollIntoView({behavior:"smooth"})}
+
+function toast(msg){
+let t=$("toast");t.textContent=msg;t.classList.add("show");
+clearTimeout(window.tt);
+window.tt=setTimeout(()=>t.classList.remove("show"),1600)
+}
+
+async function copyText(t){
+try{await navigator.clipboard.writeText(t)}
+catch(e){
+let a=document.createElement("textarea");a.value=t;document.body.appendChild(a);a.select();document.execCommand("copy");a.remove()
+}
+toast("কপি হয়েছে ✓")
+}
+
+function copyId(id){let c=all.find(x=>x.id===id);if(c)copyText(c.text)}
+
+function toggleFav(id){
+favs.has(id)?favs.delete(id):favs.add(id);
+drawList();
+if(id===all[fi].id)updateFeatureFav()
+}
+
+function nextFeature(){
+fi=(fi+1)%all.length;
+let c=all[fi];
+$("featured").textContent=c.text;
+$("featureCat").textContent=icons[c.cat]+" "+c.cat;
+$("featureFav").textContent=favs.has(c.id)?"♥":"♡";
+$("featureFav").classList.toggle("saved",favs.has(c.id))
+}
+
+function copyFeatured(){copyText(all[fi].text)}
+function toggleFeature(){toggleFav(all[fi].id);updateFeatureFav()}
+
+function updateFeatureFav(){
+$("featureFav").textContent=favs.has(all[fi].id)?"♥":"♡";
+$("featureFav").classList.toggle("saved",favs.has(all[fi].id))
+}
+
+function navTo(id,b){
+document.querySelectorAll(".nav button").forEach(x=>x.classList.remove("active"));
+b.classList.add("active");
+$(id).scrollIntoView({behavior:"smooth"})
+}
+
+$("search").addEventListener("input",drawList);
+drawCats();
+drawList();
+nextFeature();
+</script>
+</body>
+</html>
